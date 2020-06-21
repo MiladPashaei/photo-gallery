@@ -1,0 +1,81 @@
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+
+
+  }
+
+  40% {
+    opacity: 0.4;
+  }
+
+  80% {
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 1;
+
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+
+  80% {
+    transform: translateX(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInButton {
+  0% {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes movetoRight {
+  from {
+    width: 0;
+    opacity: 0;
+    display: none;
+    transform: translateX(90rem);
+  }
+
+  to {
+    width: 100%;
+    opacity: 1;
+    display: block;
+    transform: translateX(0);
+  }
+}
+
+@keyframes movetoleft {
+  from {
+
+    width: 100%;
+    opacity: 1;
+    display: block;
+    transform: translateX(0);
+  }
+
+  to {
+    width: 0 !important;
+    opacity: 0 !important;
+    display: none !important;
+    transform: translateX(90rem);
+  }
+}

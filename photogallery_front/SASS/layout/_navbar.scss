@@ -1,0 +1,31 @@
+.navbar {
+  position: relative;
+  height: 8rem;
+
+  &__ul {
+    list-style: none;
+    text-align: right;
+  }
+
+  &__li {
+    margin-top: 1.5rem;
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: 4.5rem;
+    }
+
+  }
+
+  &__link {
+    text-decoration: none;
+    color: #212121;
+
+    font-size: 1.6rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+  }
+}
+
+
+/* END NAVBAR CSS */

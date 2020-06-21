@@ -1,0 +1,21 @@
+/* SORT CSS */
+
+.sort-box {
+  p {
+    font-size: 1.6rem;
+    display: inline-block;
+    color: #212121;
+    margin-right: 6rem;
+  }
+
+  &__button {
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: #212121;
+    margin-right: 3rem;
+
+    &:active {
+      color: $btn-color-primary
+    }
+  }
+}

@@ -1,0 +1,21 @@
+//ABSTRACTS
+
+
+@import "./abstracts/mixins";
+@import "./abstracts/variables";
+// Base
+@import "./base/base";
+@import "./base/animations";
+@import "./base/typogrophy";
+@import "./base/utillities";
+
+//Grids
+@import "./grids/masonry";
+@import "./grids/fluid";
+
+//layout
+@import "./layout/navbar";
+@import "./layout/sort";
+@import "./layout/imagesList";
+@import "./layout/popUp";
+@import "./layout/search";

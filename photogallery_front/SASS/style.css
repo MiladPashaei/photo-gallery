@@ -1,0 +1,162 @@
+/*
+0-600px: phone;
+
+600-900px : tablet portrait
+
+900-1200px:tablet landscape;
+
+(1200-1800) is where our normal styles apply
+
+1800px+:Big desktop
+
+
+$breakpoint argument choises :
+-phone
+-tab-port
+-tab-land
+-big-desktop
+1em:16px
+
+
+ORDER = BASE+ Typography > General layout + grid > page layout > component
+*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+@media (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+@media (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 37.5em) {
+  html {
+    font-size: 48%;
+  }
+}
+
+@media (min-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  padding: 3rem;
+}
+
+@media (max-width: 56.25em) {
+  body {
+    padding: 0rem;
+  }
+}
+
+.container {
+  margin: 0 18rem;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+
+  80% {
+    transform: translateX(1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+
+  80% {
+    transform: translateX(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInButton {
+  0% {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header {
+  font-size: 6rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-style: italic;
+  margin-bottom: 11.8rem;
+}
+
+.u-center-text {
+  text-align: center !important;
+}
+
+.u-mb-b {
+  margin-bottom: 8rem !important;
+}
+
+@media (max-width: 56.25em) {
+  .u-mb-b {
+    margin-bottom: 5rem !important;
+  }
+}
+
+.u-mb-m {
+  margin-bottom: 4rem !important;
+}
+
+@media (max-width: 56.25em) {
+  .u-mb-m {
+    margin-bottom: 3rem !important;
+  }
+}
+
+.u-mb-s {
+  margin-bottom: 1.5rem !important;
+}
+
+.u-mb-b {
+  margin-top: 8rem !important;
+}
+
+.u-mb-huge {
+  margin-top: 10rem !important;
+}
+
+/*# sourceMappingURL=style.css.map */

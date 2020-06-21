@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- font Awsome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- adding Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Photo Gallery</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- POPUP IMAGE -->
+
+      <!-- NAVBAR -->
+      <nav class="navbar">
+        <div class="search show">
+          <form id="searchImg">
+            <a href="#" class="search__back" id="search_back">
+              <i class="fa fa-arrow-left" aria-hidden="true"></i
+            ></a>
+            <input
+              type="search"
+              name="search"
+              id="search"
+              class="search__container"
+              placeholder="Search image by title"
+            />
+            <hr class="search_br" />
+          </form>
+        </div>
+        <ul class="navbar__ul">
+          <li class="navbar__li"><a href="#" class="navbar__link">Works</a></li>
+          <li class="navbar__li">
+            <a href="#" class="navbar__link">About Me</a>
+          </li>
+          <li class="navbar__li">
+            <a href="#" class="navbar__link">Contacts</a>
+          </li>
+          <li class="navbar__li">
+            <div class="navigation__search">
+              <a href="#" id="search_icon" class="navbar__link search__icon">
+                <i class="fa fa-search" aria-hidden="true"></i
+              ></a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- NAME AND TAG -->
+      <h1 class="header">
+        Milad Pashaei's <br />
+        &nbsp; &nbsp; &nbsp;PHOTGRAPHY
+      </h1>
+      <!-- SORT ITEMS -->
+      <div class="sort-box">
+        <p>Sort by:</p>
+        <a href="" id="sortByRate" class="sort-box__button"> Most Popular</a>
+        <a href="" id="sortByTitle" class="sort-box__button"> Title</a>
+      </div>
+      <!-- MAKE IMAGES in masonry Grid-->
+
+      <div class="images-gallery"></div>
+    </div>
+    <div class="popup">
+      <div class="popup__content"></div>
+    </div>
+
+    <!-- Scripts AND BOOTSTRAP JS -->
+    <script src="app.js"></script>
+  </body>
+</html>
