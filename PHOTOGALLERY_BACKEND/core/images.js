@@ -1,4 +1,4 @@
-class Images {
+class Image {
   constructor(name, discription, url, id) {
     this.name = name;
     this.rate = 0;
@@ -9,4 +9,4 @@ class Images {
   }
 }
 
-module.exports = Images;
+module.exports = Image;

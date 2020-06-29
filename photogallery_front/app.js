@@ -24,11 +24,8 @@ window.onclick = function (event) {
 class Images {
   async getImages() {
     try {
-      const fetchedImages = await fetch("http://localhost:3000/api", {
-        method: "GET",
-      }).then((res) => {
-        return res.json();
-      });
+      const fetchedImages = await fetch("http://localhost:3000/api")
+        .then(res => res.json());
       fetchedData = [...fetchedImages];
 
       return fetchedImages;
@@ -64,7 +61,7 @@ class UI {
     
       <span class="like-tap" data-id=${item.id}><i class="fa ${
         !isLiked && !item.beenLiked ? `fa-heart-o` : `fa-heart`
-      } " data-id=${item.id}  ></i></span>
+        } " data-id=${item.id}  ></i></span>
        <p>${item.rate}</p></div>
 
       
@@ -194,42 +191,40 @@ class UI {
     });
   }
 
-  async likedImg(id) {
+  async apiCall(route, id) {
     try {
-      const url = `http://localhost:3000/like/${id}`;
+      const url = `http://localhost:3000/${route}/${id}`;
       await fetch(url, { method: "POST" });
     } catch (err) {
       console.log(err);
     }
   }
+
+  async likedImg(id) {
+    this.apiCall('like', id);
+  }
+
   async dislikeImg(id) {
-    try {
-      const url = `http://localhost:3000/dislike/${id}`;
-      await fetch(url, { method: "POST" });
-    } catch (err) {
-      console.log(err);
-    }
+    this.apiCall('dislike', id);
   }
 
   searchFun() {
     this.searchIconFun();
     this.searchBackFun();
     searchContent.addEventListener("keyup", (e) => {
-      const term = e.target.value.toLowerCase();
+      const { value } = e.target;
+      const term = value.toLowerCase();
 
       const searched = [];
       backUpData.forEach((image) => {
-        const title = image.name.split("-")[0];
+        const [title] = image.name.split("-");
 
         if (title.toLowerCase().indexOf(term) !== -1) {
           searched.push(image);
         }
       });
-      if (e.target.value.length === 0) {
-        this.printImages(fetchedData);
-      } else {
-        this.printImages(searched);
-      }
+
+      this.printImages(value.length === 0 ? fetchedData : searched)
     });
   }
 
@@ -258,9 +253,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const ui = new UI();
   images
     .getImages()
-    .then((data) => {
-      ui.printImages(data);
-    })
+    .then(ui.printImages)
     .then(() => {
       ui.sortByTitle();
       ui.sortByRate();

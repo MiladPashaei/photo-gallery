@@ -1,4 +1,4 @@
-const Images = require("./images");
+const Image = require("./images");
 
 const preDATA = {
   images: [
@@ -152,27 +152,27 @@ const preDATA = {
   ],
 };
 
-let ImagesData = [];
-preDATA.images.map((item) => {
+
+let imagesData = preDATA.images.map((item) => {
   const { name, discription, url, id } = item;
-  const newObj = new Images(name, discription, url, id);
-  ImagesData.push(newObj);
+  return new Image(name, discription, url, id);
 });
 
 class ImagesRepository {
   constructor() {
-    this.imagesData = [...ImagesData];
+    this.imagesData = [...imagesData];
   }
-  show() {
-    let data = JSON.stringify(this.imagesData);
 
-    return data;
+  show() {
+    return JSON.stringify(this.imagesData);
   }
+
   like(id) {
     const image = this.imagesData.find((y) => y.id === id);
     image.rate++;
     image.beenLiked = true;
   }
+
   disLike(id) {
     const image = this.imagesData.find((y) => y.id === id);
     image.rate--;
